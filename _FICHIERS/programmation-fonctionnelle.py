@@ -14,3 +14,5 @@ data = map( lambda symbol: symbol['symbol'], data)
 
 print( list(data) )
 
+
+
