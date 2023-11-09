@@ -38,7 +38,7 @@ class Horloge:
         if self.__heure>11:
             self.__heure = 0
 
-    def affiche_aiguille(pos, max, couleur, pensize, longueur):
+    def __affiche_aiguille(pos, max, couleur, pensize, longueur):
 
         # Calcule angle
         angle = 360 / max * pos
