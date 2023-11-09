@@ -10,33 +10,33 @@ class Horloge:
         :param s:
         """
         if h<0 or h>11:
-            self.heure = 0
+            self.__heure = 0
         else:
-            self.heure = h
+            self.__heure = h
             
         if m<0 or m>59:
-            self.min = 0
+            self.__min = 0
         else:
-            self.min = m
+            self.__min = m
             
         if s<0 or s>59:
-            self.sec = 0
+            self.__sec = 0
         else:
-            self.sec = s
+            self.__sec = s
 
     def __str__(self) -> str:
-        return f'{str(self.heure).zfill(2)}:{str(self.min).zfill(2)}:{str(self.sec).zfill(2)}'
+        return f'{str(self.__heure).zfill(2)}:{str(self.__min).zfill(2)}:{str(self.__sec).zfill(2)}'
 
     def avance_une_seconde(self):
-        self.sec += 1
-        if self.sec > 59:
-            self.sec=0
-            self.min += 1
-        if self.min > 59:
-            self.min = 0
-            self.heure += 1
-        if self.heure>11:
-            self.heure = 0
+        self.__sec += 1
+        if self.__sec > 59:
+            self.__sec=0
+            self.__min += 1
+        if self.__min > 59:
+            self.__min = 0
+            self.__heure += 1
+        if self.__heure>11:
+            self.__heure = 0
 
     def affiche_aiguille(pos, max, couleur, pensize, longueur):
 
@@ -70,9 +70,9 @@ class Horloge:
         turtle.circle(RAYON)
 
         # Dessine aiguilles
-        Horloge.affiche_aiguille(self.heure,12,'red',10,100)
-        Horloge.affiche_aiguille(self.min, 60, 'blue', 5, 200)
-        Horloge.affiche_aiguille(self.sec, 60, 'green', 2, 200)
+        Horloge.affiche_aiguille(self.__heure, 12, 'red', 10, 100)
+        Horloge.affiche_aiguille(self.__min, 60, 'blue', 5, 200)
+        Horloge.affiche_aiguille(self.__sec, 60, 'green', 2, 200)
 
 
 turtle.speed(0)
