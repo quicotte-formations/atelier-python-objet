@@ -12,10 +12,8 @@ class ATester(unittest.TestCase):
 
     def test_div_par_zero_pas_ok(self):
 
-        self.data.remove(2)
-
         with self.assertRaises(Exception):
-            c=2/0
+            c=2/2
 
     def test_b(self):
         a=1
